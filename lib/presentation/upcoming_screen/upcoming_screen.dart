@@ -11,6 +11,18 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: Icon(Icons.accessibility),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RegisterScreen()))
+              }),
+          ]
         backgroundColor: ColorConstant.purple50,
         body: Column(
           mainAxisSize: MainAxisSize.min,
