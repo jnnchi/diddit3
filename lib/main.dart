@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Locale('en', 'US'),
       title: 'diddit_final',
       initialBinding: InitialBindings(),
-      initialRoute: AppRoutes.initialRoute,
+      initialRoute: AppRoutes.appNavigationScreen,
       getPages: AppRoutes.pages,
     );
   }
