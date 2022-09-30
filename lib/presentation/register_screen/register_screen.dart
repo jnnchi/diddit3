@@ -1,4 +1,7 @@
+import 'dart:js';
+
 import 'package:diddit_final/presentation/assignment_screen/assignment_screen.dart';
+import 'package:diddit_final/presentation/sign_in_screen/sign_in_screen.dart';
 import 'package:diddit_final/presentation/upcoming_screen/upcoming_screen.dart';
 
 import 'controller/register_controller.dart';
@@ -166,17 +169,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          TextSpan(
-                            text: "lbl_sign_in".tr,
-                            style: TextStyle(
-                              color: ColorConstant.purple800,
-                              fontSize: getFontSize(
-                                12,
-                              ),
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
+                          WidgetSpan(child: signInWidget("Sign In")),
                         ],
                       ),
                       textAlign: TextAlign.left,
@@ -189,5 +182,15 @@ class RegisterScreen extends GetWidget<RegisterController> {
         ),
       ),
     );
+  }
+  // bruh change already what
+
+  Widget signInWidget(String name) {
+    return GestureDetector(
+        child: Text(name),
+        onTap: () {
+          navigator?.push<void>(MaterialPageRoute<void>(
+              builder: (BuildContext context) => SignInScreen()));
+        });
   }
 }

@@ -172,14 +172,14 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: Get.put(UpcomingController())
+                            itemCount: UpcomingController()
                                 .upcomingModelObj
                                 .value
                                 .listclassnameItemList
                                 .length,
                             itemBuilder: (context, index) {
                               ListclassnameItemModel model =
-                                  Get.put(UpcomingController())
+                                  UpcomingController()
                                       .upcomingModelObj
                                       .value
                                       .listclassnameItemList[index];
@@ -226,14 +226,14 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: Get.put(UpcomingController())
+                            itemCount: UpcomingController()
                                 .upcomingModelObj
                                 .value
                                 .listclassnameThreeItemList
                                 .length,
                             itemBuilder: (context, index) {
                               ListclassnameThreeItemModel model =
-                                  Get.put(UpcomingController())
+                                  UpcomingController()
                                       .upcomingModelObj
                                       .value
                                       .listclassnameThreeItemList[index];
