@@ -172,13 +172,17 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: controller.upcomingModelObj.value
-                                .listclassnameItemList.length,
+                            itemCount: UpcomingController()
+                                .upcomingModelObj
+                                .value
+                                .listclassnameItemList
+                                .length,
                             itemBuilder: (context, index) {
-                              ListclassnameItemModel model = controller
-                                  .upcomingModelObj
-                                  .value
-                                  .listclassnameItemList[index];
+                              ListclassnameItemModel model =
+                                  UpcomingController()
+                                      .upcomingModelObj
+                                      .value
+                                      .listclassnameItemList[index];
                               return ListclassnameItemWidget(
                                 model,
                               );
@@ -222,13 +226,17 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: controller.upcomingModelObj.value
-                                .listclassnameThreeItemList.length,
+                            itemCount: UpcomingController()
+                                .upcomingModelObj
+                                .value
+                                .listclassnameThreeItemList
+                                .length,
                             itemBuilder: (context, index) {
-                              ListclassnameThreeItemModel model = controller
-                                  .upcomingModelObj
-                                  .value
-                                  .listclassnameThreeItemList[index];
+                              ListclassnameThreeItemModel model =
+                                  UpcomingController()
+                                      .upcomingModelObj
+                                      .value
+                                      .listclassnameThreeItemList[index];
                               return ListclassnameThreeItemWidget(
                                 model,
                               );
