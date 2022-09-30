@@ -1,4 +1,5 @@
 import 'package:diddit_final/presentation/assignment_screen/assignment_screen.dart';
+import 'package:diddit_final/presentation/upcoming_screen/upcoming_screen.dart';
 
 import 'controller/register_controller.dart';
 import 'package:diddit_final/core/app_export.dart';
@@ -127,24 +128,23 @@ class RegisterScreen extends GetWidget<RegisterController> {
                     isObscureText: true,
                   ),
                   CustomButton(
-                    width: 325,
-                    text: "lbl_register".tr,
-                    margin: getMargin(
-                      left: 25,
-                      top: 63,
-                      right: 25,
-                    ),
-                    variant: ButtonVariant.FillDeeppurpleA100,
-                    shape: ButtonShape.Square,
-                    padding: ButtonPadding.PaddingAll19,
-                    fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
-                    onTap: () => {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AssignmentScreen()))
-                    },
-                  ),
+                      width: 325,
+                      text: "lbl_register".tr,
+                      margin: getMargin(
+                        left: 25,
+                        top: 63,
+                        right: 25,
+                      ),
+                      variant: ButtonVariant.FillDeeppurpleA100,
+                      shape: ButtonShape.Square,
+                      padding: ButtonPadding.PaddingAll19,
+                      fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpcomingScreen()));
+                      }),
                   Container(
                     margin: getMargin(
                       left: 25,
