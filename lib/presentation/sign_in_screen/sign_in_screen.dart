@@ -1,9 +1,13 @@
+import 'package:diddit_final/presentation/register_screen/register_screen.dart';
+import 'package:diddit_final/presentation/upcoming_screen/upcoming_screen.dart';
+
 import 'controller/sign_in_controller.dart';
 import 'package:diddit_final/core/app_export.dart';
 import 'package:diddit_final/core/utils/validation_functions.dart';
 import 'package:diddit_final/widgets/custom_button.dart';
 import 'package:diddit_final/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 class SignInScreen extends GetWidget<SignInController> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -105,18 +109,23 @@ class SignInScreen extends GetWidget<SignInController> {
                     ),
                   ),
                   CustomButton(
-                    width: 325,
-                    text: "lbl_sign_in2".tr,
-                    margin: getMargin(
-                      left: 26,
-                      top: 55,
-                      right: 24,
-                    ),
-                    variant: ButtonVariant.FillDeeppurpleA100,
-                    shape: ButtonShape.Square,
-                    padding: ButtonPadding.PaddingAll19,
-                    fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
-                  ),
+                      width: 325,
+                      text: "lbl_sign_in2".tr,
+                      margin: getMargin(
+                        left: 26,
+                        top: 55,
+                        right: 24,
+                      ),
+                      variant: ButtonVariant.FillDeeppurpleA100,
+                      shape: ButtonShape.Square,
+                      padding: ButtonPadding.PaddingAll19,
+                      fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpcomingScreen()));
+                      }),
                   Container(
                     margin: getMargin(
                       left: 26,
@@ -139,16 +148,23 @@ class SignInScreen extends GetWidget<SignInController> {
                             ),
                           ),
                           TextSpan(
-                            text: "lbl_sign_up".tr,
-                            style: TextStyle(
-                              color: ColorConstant.purple800,
-                              fontSize: getFontSize(
-                                12,
+                              text: "lbl_sign_up".tr,
+                              style: TextStyle(
+                                color: ColorConstant.purple800,
+                                fontSize: getFontSize(
+                                  12,
+                                ),
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
                               ),
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RegisterScreen()))
+                                    }),
                         ],
                       ),
                       textAlign: TextAlign.left,
