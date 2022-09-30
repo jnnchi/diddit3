@@ -1,3 +1,5 @@
+import 'package:diddit_final/presentation/completed_screen/completed_screen.dart';
+
 import '../upcoming_screen/widgets/listclassname_item_widget.dart';
 import '../upcoming_screen/widgets/listclassname_three_item_widget.dart';
 import 'controller/upcoming_controller.dart';
@@ -13,14 +15,22 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(leading: Icon(Icons.accessibility), actions: <Widget>[
+        appBar: AppBar(leading: Icon(Icons.account_circle), actions: <Widget>[
           IconButton(
               icon: Icon(Icons.home),
               onPressed: () => {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => RegisterScreen()))
+                            builder: (context) => UpcomingScreen()))
+                  }),
+          IconButton(
+              icon: Icon(Icons.check_box),
+              onPressed: () => {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CompletedScreen()))
                   }),
         ]),
         backgroundColor: ColorConstant.purple50,
