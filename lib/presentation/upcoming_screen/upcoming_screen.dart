@@ -5,24 +5,24 @@ import 'models/listclassname_item_model.dart';
 import 'models/listclassname_three_item_model.dart';
 import 'package:diddit_final/core/app_export.dart';
 import 'package:flutter/material.dart';
+import 'package:diddit_final/presentation/assignment_screen/assignment_screen.dart';
+import 'package:diddit_final/presentation/register_screen/register_screen.dart';
 
 class UpcomingScreen extends GetWidget<UpcomingController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.accessibility),
-          actions: <Widget>[
-            IconButton(
+        appBar: AppBar(leading: Icon(Icons.accessibility), actions: <Widget>[
+          IconButton(
               icon: Icon(Icons.home),
               onPressed: () => {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RegisterScreen()))
-              }),
-          ]
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterScreen()))
+                  }),
+        ]),
         backgroundColor: ColorConstant.purple50,
         body: Column(
           mainAxisSize: MainAxisSize.min,
@@ -184,14 +184,14 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: UpcomingController()
+                            itemCount: Get.put(UpcomingController())
                                 .upcomingModelObj
                                 .value
                                 .listclassnameItemList
                                 .length,
                             itemBuilder: (context, index) {
                               ListclassnameItemModel model =
-                                  UpcomingController()
+                                  Get.put(UpcomingController())
                                       .upcomingModelObj
                                       .value
                                       .listclassnameItemList[index];
@@ -238,14 +238,14 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                           () => ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: UpcomingController()
+                            itemCount: Get.put(UpcomingController())
                                 .upcomingModelObj
                                 .value
                                 .listclassnameThreeItemList
                                 .length,
                             itemBuilder: (context, index) {
                               ListclassnameThreeItemModel model =
-                                  UpcomingController()
+                                  Get.put(UpcomingController())
                                       .upcomingModelObj
                                       .value
                                       .listclassnameThreeItemList[index];
