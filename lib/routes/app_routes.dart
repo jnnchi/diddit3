@@ -83,7 +83,7 @@ class AppRoutes {
     ),
     GetPage(
       name: initialRoute,
-      page: () => SplashScreen(),
+      page: () => RegisterScreen(), // change this to test screens since we can't cross them for now
       bindings: [
         SplashBinding(),
       ],
