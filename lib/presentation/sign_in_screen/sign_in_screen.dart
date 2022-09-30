@@ -56,7 +56,7 @@ class SignInScreen extends GetWidget<SignInController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldController,
+                    controller: SignInController().textFieldController,
                     hintText: "msg_enter_your_emai".tr,
                     margin: getMargin(
                       left: 26,
@@ -74,7 +74,7 @@ class SignInScreen extends GetWidget<SignInController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldOneController,
+                    controller: SignInController().textFieldOneController,
                     hintText: "msg_enter_your_pass".tr,
                     margin: getMargin(
                       left: 26,
