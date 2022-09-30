@@ -2,6 +2,7 @@ import 'controller/splash_controller.dart';
 import 'package:diddit_final/core/app_export.dart';
 import 'package:diddit_final/widgets/custom_button.dart';
 import 'package:diddit_final/presentation/register_screen/register_screen.dart';
+import 'package:diddit_final/presentation/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends GetWidget<SplashController> {
