@@ -1,6 +1,7 @@
 import 'controller/splash_controller.dart';
 import 'package:diddit_final/core/app_export.dart';
 import 'package:diddit_final/widgets/custom_button.dart';
+import 'package:diddit_final/presentation/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends GetWidget<SplashController> {
@@ -104,20 +105,25 @@ class SplashScreen extends GetWidget<SplashController> {
                   ),
                 ),
                 CustomButton(
-                  width: 325,
-                  text: "lbl_get_started".tr,
-                  margin: getMargin(
-                    left: 25,
-                    top: 74,
-                    right: 25,
-                    bottom: 20,
-                  ),
-                  variant: ButtonVariant.FillDeeppurpleA100,
-                  shape: ButtonShape.Square,
-                  padding: ButtonPadding.PaddingAll19,
-                  fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
-                  alignment: Alignment.center,
-                ),
+                    width: 325,
+                    text: "lbl_get_started".tr,
+                    margin: getMargin(
+                      left: 25,
+                      top: 74,
+                      right: 25,
+                      bottom: 20,
+                    ),
+                    variant: ButtonVariant.FillDeeppurpleA100,
+                    shape: ButtonShape.Square,
+                    padding: ButtonPadding.PaddingAll19,
+                    fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
+                    alignment: Alignment.center,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterScreen()));
+                    }),
               ],
             ),
           ),
