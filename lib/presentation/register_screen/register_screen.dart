@@ -10,6 +10,7 @@ import 'package:diddit_final/core/utils/validation_functions.dart';
 import 'package:diddit_final/widgets/custom_button.dart';
 import 'package:diddit_final/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 
 class RegisterScreen extends GetWidget<RegisterController> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -169,7 +170,24 @@ class RegisterScreen extends GetWidget<RegisterController> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          WidgetSpan(child: signInWidget("Sign In")),
+                          TextSpan(
+                              text: "lbl_sign_in".tr,
+                              style: TextStyle(
+                                color: ColorConstant.purple800,
+                                fontSize: getFontSize(
+                                  12,
+                                ),
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                              ),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () => {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SignInScreen()))
+                                    }),
                         ],
                       ),
                       textAlign: TextAlign.left,
@@ -182,15 +200,5 @@ class RegisterScreen extends GetWidget<RegisterController> {
         ),
       ),
     );
-  }
-  // bruh change already what
-
-  Widget signInWidget(String name) {
-    return GestureDetector(
-        child: Text(name),
-        onTap: () {
-          navigator?.push<void>(MaterialPageRoute<void>(
-              builder: (BuildContext context) => SignInScreen()));
-        });
   }
 }
