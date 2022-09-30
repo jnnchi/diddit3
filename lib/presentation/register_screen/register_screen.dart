@@ -1,3 +1,5 @@
+import 'package:diddit_final/presentation/assignment_screen/assignment_screen.dart';
+
 import 'controller/register_controller.dart';
 import 'package:diddit_final/core/app_export.dart';
 import 'package:diddit_final/core/utils/validation_functions.dart';
@@ -53,7 +55,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldController,
+                    controller: RegisterController().textFieldController,
                     hintText: "msg_enter_your_full".tr,
                     margin: getMargin(
                       left: 25,
@@ -70,7 +72,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldOneController,
+                    controller: RegisterController().textFieldOneController,
                     hintText: "msg_enter_your_emai".tr,
                     margin: getMargin(
                       left: 25,
@@ -88,7 +90,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldTwoController,
+                    controller: RegisterController().textFieldTwoController,
                     hintText: "msg_enter_your_pass".tr,
                     margin: getMargin(
                       left: 25,
@@ -107,7 +109,7 @@ class RegisterScreen extends GetWidget<RegisterController> {
                   CustomTextFormField(
                     width: 324,
                     focusNode: FocusNode(),
-                    controller: controller.textFieldThreeController,
+                    controller: RegisterController().textFieldThreeController,
                     hintText: "msg_confirm_your_pa".tr,
                     margin: getMargin(
                       left: 25,
@@ -136,6 +138,12 @@ class RegisterScreen extends GetWidget<RegisterController> {
                     shape: ButtonShape.Square,
                     padding: ButtonPadding.PaddingAll19,
                     fontStyle: ButtonFontStyle.WorkSansRomanSemiBold13,
+                    onTap: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AssignmentScreen()))
+                    },
                   ),
                   Container(
                     margin: getMargin(
