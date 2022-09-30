@@ -5,12 +5,31 @@ import 'package:diddit_final/core/app_export.dart';
 import 'package:diddit_final/widgets/custom_button.dart';
 import 'package:diddit_final/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:diddit_final/presentation/upcoming_screen/upcoming_screen.dart';
 
 class CompletedScreen extends GetWidget<CompletedController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(leading: Icon(Icons.account_circle), actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () => {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UpcomingScreen()))
+                  }),
+          IconButton(
+              icon: Icon(Icons.check_box),
+              onPressed: () => {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CompletedScreen()))
+                  }),
+        ]),
         backgroundColor: ColorConstant.purple50,
         body: Container(
           width: size.width,
@@ -172,11 +191,17 @@ class CompletedScreen extends GetWidget<CompletedController> {
                     () => ListView.builder(
                       physics: BouncingScrollPhysics(),
                       shrinkWrap: true,
-                      itemCount: controller
-                          .completedModelObj.value.completedItemList.length,
+                      itemCount: Get.put(CompletedController())
+                          .completedModelObj
+                          .value
+                          .completedItemList
+                          .length,
                       itemBuilder: (context, index) {
-                        CompletedItemModel model = controller
-                            .completedModelObj.value.completedItemList[index];
+                        CompletedItemModel model =
+                            Get.put(CompletedController())
+                                .completedModelObj
+                                .value
+                                .completedItemList[index];
                         return CompletedItemWidget(
                           model,
                         );
