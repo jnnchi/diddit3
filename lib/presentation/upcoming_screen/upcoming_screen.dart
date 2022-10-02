@@ -1,5 +1,4 @@
 import 'package:diddit_final/presentation/completed_screen/completed_screen.dart';
-
 import '../upcoming_screen/widgets/listclassname_item_widget.dart';
 import '../upcoming_screen/widgets/listclassname_three_item_widget.dart';
 import 'controller/upcoming_controller.dart';
@@ -39,68 +38,6 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              width: size.width,
-              margin: getMargin(
-                top: 4,
-              ),
-              child: Padding(
-                padding: getPadding(
-                  left: 33,
-                  right: 40,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: getPadding(
-                        top: 1,
-                        bottom: 1,
-                      ),
-                      child: CommonImageView(
-                        svgPath: ImageConstant.imgHome,
-                        height: getVerticalSize(
-                          19.00,
-                        ),
-                        width: getHorizontalSize(
-                          25.00,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: getPadding(
-                        top: 1,
-                      ),
-                      child: CommonImageView(
-                        svgPath: ImageConstant.imgCheckmark,
-                        height: getSize(
-                          20.00,
-                        ),
-                        width: getSize(
-                          20.00,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: getPadding(
-                        bottom: 1,
-                      ),
-                      child: CommonImageView(
-                        svgPath: ImageConstant.imgSettings,
-                        height: getVerticalSize(
-                          20.00,
-                        ),
-                        width: getHorizontalSize(
-                          25.00,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
@@ -114,47 +51,6 @@ class UpcomingScreen extends GetWidget<UpcomingController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: getPadding(
-                              bottom: 1,
-                            ),
-                            child: Text(
-                              "lbl_home".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtPoppinsRegular14,
-                            ),
-                          ),
-                          Padding(
-                            padding: getPadding(
-                              top: 1,
-                            ),
-                            child: Text(
-                              "lbl_completed".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtPoppinsRegular14,
-                            ),
-                          ),
-                          Padding(
-                            padding: getPadding(
-                              top: 1,
-                              bottom: 1,
-                            ),
-                            child: Text(
-                              "lbl_account".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtPoppinsRegular14,
-                            ),
-                          ),
-                        ],
-                      ),
                       Align(
                         alignment: Alignment.center,
                         child: Container(
